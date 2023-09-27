@@ -1,0 +1,604 @@
+/* ==UserStyle==
+@name Instagram Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/instagram
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/instagram
+@version 0.1.0
+@description Soothing pastel theme for Instagram
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/instagram/catppuccin.user.css
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor  "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire*", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+@-moz-document regexp("https:\\/\\/(.+\\.)?instagram.com/.*") {
+
+    // prettier-ignore
+    @catppuccin: {
+        @latte: {
+            @rosewater: #dc8a78;
+            @flamingo: #dd7878;
+            @pink: #ea76cb;
+            @mauve: #8839ef;
+            @red: #d20f39;
+            @maroon: #e64553;
+            @peach: #fe640b;
+            @yellow: #df8e1d;
+            @green: #40a02b;
+            @teal: #179299;
+            @sky: #04a5e5;
+            @sapphire: #209fb5;
+            @blue: #1e66f5;
+            @lavender: #7287fd;
+            @text: #4c4f69;
+            @subtext1: #5c5f77;
+            @subtext0: #6c6f85;
+            @overlay2: #7c7f93;
+            @overlay1: #8c8fa1;
+            @overlay0: #9ca0b0;
+            @surface2: #acb0be;
+            @surface1: #bcc0cc;
+            @surface0: #ccd0da;
+            @base: #eff1f5;
+            @mantle: #e6e9ef;
+            @crust: #dce0e8;
+        }
+
+        ;
+
+        @frappe: {
+            @rosewater: #f2d5cf;
+            @flamingo: #eebebe;
+            @pink: #f4b8e4;
+            @mauve: #ca9ee6;
+            @red: #e78284;
+            @maroon: #ea999c;
+            @peach: #ef9f76;
+            @yellow: #e5c890;
+            @green: #a6d189;
+            @teal: #81c8be;
+            @sky: #99d1db;
+            @sapphire: #85c1dc;
+            @blue: #8caaee;
+            @lavender: #babbf1;
+            @text: #c6d0f5;
+            @subtext1: #b5bfe2;
+            @subtext0: #a5adce;
+            @overlay2: #949cbb;
+            @overlay1: #838ba7;
+            @overlay0: #737994;
+            @surface2: #626880;
+            @surface1: #51576d;
+            @surface0: #414559;
+            @base: #303446;
+            @mantle: #292c3c;
+            @crust: #232634;
+        }
+
+        ;
+
+        @macchiato: {
+            @rosewater: #f4dbd6;
+            @flamingo: #f0c6c6;
+            @pink: #f5bde6;
+            @mauve: #c6a0f6;
+            @red: #ed8796;
+            @maroon: #ee99a0;
+            @peach: #f5a97f;
+            @yellow: #eed49f;
+            @green: #a6da95;
+            @teal: #8bd5ca;
+            @sky: #91d7e3;
+            @sapphire: #7dc4e4;
+            @blue: #8aadf4;
+            @lavender: #b7bdf8;
+            @text: #cad3f5;
+            @subtext1: #b8c0e0;
+            @subtext0: #a5adcb;
+            @overlay2: #939ab7;
+            @overlay1: #8087a2;
+            @overlay0: #6e738d;
+            @surface2: #5b6078;
+            @surface1: #494d64;
+            @surface0: #363a4f;
+            @base: #24273a;
+            @mantle: #1e2030;
+            @crust: #181926;
+        }
+
+        ;
+
+        @mocha: {
+            @rosewater: #f5e0dc;
+            @flamingo: #f2cdcd;
+            @pink: #f5c2e7;
+            @mauve: #cba6f7;
+            @red: #f38ba8;
+            @maroon: #eba0ac;
+            @peach: #fab387;
+            @yellow: #f9e2af;
+            @green: #a6e3a1;
+            @teal: #94e2d5;
+            @sky: #89dceb;
+            @sapphire: #74c7ec;
+            @blue: #89b4fa;
+            @lavender: #b4befe;
+            @text: #cdd6f4;
+            @subtext1: #bac2de;
+            @subtext0: #a6adc8;
+            @overlay2: #9399b2;
+            @overlay1: #7f849c;
+            @overlay0: #6c7086;
+            @surface2: #585b70;
+            @surface1: #45475a;
+            @surface0: #313244;
+            @base: #1e1e2e;
+            @mantle: #181825;
+            @crust: #11111b;
+        }
+
+        ;
+    }
+
+    #catppuccin(@lookup, @accent-color) {
+        @rosewater: @catppuccin[@@lookup][@rosewater];
+        @flamingo: @catppuccin[@@lookup][@flamingo];
+        @pink: @catppuccin[@@lookup][@pink];
+        @mauve: @catppuccin[@@lookup][@mauve];
+        @red: @catppuccin[@@lookup][@red];
+        @maroon: @catppuccin[@@lookup][@maroon];
+        @peach: @catppuccin[@@lookup][@peach];
+        @yellow: @catppuccin[@@lookup][@yellow];
+        @green: @catppuccin[@@lookup][@green];
+        @teal: @catppuccin[@@lookup][@teal];
+        @sky: @catppuccin[@@lookup][@sky];
+        @sapphire: @catppuccin[@@lookup][@sapphire];
+        @blue: @catppuccin[@@lookup][@blue];
+        @lavender: @catppuccin[@@lookup][@lavender];
+        @text: @catppuccin[@@lookup][@text];
+        @subtext1: @catppuccin[@@lookup][@subtext1];
+        @subtext0: @catppuccin[@@lookup][@subtext0];
+        @overlay2: @catppuccin[@@lookup][@overlay2];
+        @overlay1: @catppuccin[@@lookup][@overlay1];
+        @overlay0: @catppuccin[@@lookup][@overlay0];
+        @surface2: @catppuccin[@@lookup][@surface2];
+        @surface1: @catppuccin[@@lookup][@surface1];
+        @surface0: @catppuccin[@@lookup][@surface0];
+        @base: @catppuccin[@@lookup][@base];
+        @mantle: @catppuccin[@@lookup][@mantle];
+        @crust: @catppuccin[@@lookup][@crust];
+        @accent: @catppuccin[@@lookup][@@accent-color];
+
+        svg {
+            fill: @text !important;
+            color: @text !important;
+        }
+
+        /* Story next button */
+        ._9zs2 {
+            -webkit-mask-image: url(https://static.cdninstagram.com/rsrc.php/v3/yz/r/quLU_xi5ZD1.png);
+            background: @accent !important;
+            -webkit-mask-size: 553px 528px;
+            -webkit-mask-position: -291px -269px;
+        }
+
+        [alt="Checkmark"] {
+            -webkit-mask-image: url(https://www.instagram.com/images/instagram/xig/web/illo-confirm-refresh-light.png);
+            background: linear-gradient(135deg,
+                    @yellow,
+                    @peach,
+                    @red,
+                    @pink,
+                    @mauve ) !important;
+            height: 0;
+            width: 0;
+            padding: 48px;
+            -webkit-mask-size: contain;
+        }
+
+        ._aa4d,
+        [style^="--fds"]>div,
+        [role="presentation"] {
+            & when (@lookup =latte) {
+                --always-white: @base;
+                --always-black: @text;
+            }
+
+            & when not (@lookup =latte) {
+                --always-white: @text;
+                --always-black: @base;
+            }
+
+            --base-unit: 4px;
+            --blue-link: darken(@accent, 20%);
+            --blue-0: 245,
+            251,
+            255;
+            --blue-1: 224,
+            241,
+            255;
+            --blue-2: 179,
+            219,
+            255;
+            --blue-3: 112,
+            188,
+            255;
+            --blue-4: 71,
+            175,
+            255;
+            --blue-5: 0,
+            149,
+            246;
+            --blue-6: 0,
+            116,
+            204;
+            --blue-7: 0,
+            87,
+            163;
+            --blue-8: 0,
+            55,
+            107;
+            --blue-9: 0,
+            41,
+            82;
+            --challenge-link: 219,
+            219,
+            219;
+            --creation-header-height: 43px;
+            --creation-min-padding-x: 32px;
+            --creation-modal-max-height: 898px;
+            --creation-modal-min-height: 391px;
+            --creation-padding-x: 64px;
+            --creation-padding-y: 112px;
+            --creation-settings-width: 340px;
+            --cyan-5: 39,
+            196,
+            245;
+            --desktop-grid-item-margin: 28px;
+            --desktop-grid-item-margin-slim: 4px;
+            --desktop-in-feed-story-item-height: 208px;
+            --desktop-in-feed-story-item-width: 116px;
+            --direct-attachment-image-grid-item-size: 78px;
+            --direct-attachment-story-height: 150px;
+            --direct-attachment-story-large-height: 256px;
+            --direct-attachment-story-large-width: 164px;
+            --direct-attachment-story-width: 84px;
+            --direct-message-max-width: 236px;
+            --fb-signup-page-profile-pic-size: 88px;
+            --feed-sidebar-padding: 32px;
+            --feed-sidebar-padding-familiar: 64px;
+            --feed-sidebar-width: 319px;
+            --font-family-system: -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            Roboto,
+            Helvetica,
+            Arial,
+            sans-serif;
+            --font-weight-system-bold: 700;
+            --font-weight-system-extra-bold: 800;
+            --font-weight-system-extra-light: 200;
+            --font-weight-system-light: 300;
+            --font-weight-system-medium: 500;
+            --font-weight-system-regular: 400;
+            --font-weight-system-semibold: 600;
+            --gradient-lavender: 211,
+            0,
+            197;
+            --gradient-orange: 255,
+            122,
+            0;
+            --gradient-pink: 255,
+            1,
+            105;
+            --gradient-purple: 118,
+            56,
+            250;
+            --gradient-red: 255,
+            48,
+            64;
+            --gradient-yellow: 255,
+            214,
+            0;
+            --green-4: 120,
+            222,
+            69;
+            --green-5: 88,
+            195,
+            34;
+            --green-6: 55,
+            166,
+            0;
+            --grey-0: 245,
+            245,
+            245;
+            --grey-1: 239,
+            239,
+            239;
+            --grey-2: 219,
+            219,
+            219;
+            --grey-3: 199,
+            199,
+            199;
+            --grey-4: 168,
+            168,
+            168;
+            --grey-5: 142,
+            142,
+            142;
+            --grey-6: 115,
+            115,
+            115;
+            --grey-7: 85,
+            85,
+            85;
+            --grey-8: 54,
+            54,
+            54;
+            --grey-9: 38,
+            38,
+            38;
+            --grey-10: 26,
+            26,
+            26;
+            --ig-badge: #rgbify(@red) [];
+            --ig-banner-background: #rgbify(@mantle) [];
+            --ig-close-friends-refreshed: #rgbify(@green) [];
+            --ig-disabled-action-text: 169,
+            219,
+            255;
+            --ig-elevated-background: #rgbify(@surface0) [];
+            --ig-elevated-highlight-background: #rgbify(@surface0) [];
+            --ig-elevated-separator: #rgbify(@surface0) [];
+            --ig-error-or-destructive: 237,
+            73,
+            86;
+            --ig-facebook-blue: 53,
+            121,
+            234;
+            --ig-focus-stroke: 85,
+            85,
+            85;
+            --ig-highlight-background: #rgbify(@mantle) [];
+            --ig-hover-overlay: #rgbify(@text) [],
+            0.1;
+            --ig-link: 224,
+            241,
+            255;
+            --ig-live-badge: 255,
+            1,
+            105;
+            --ig-primary-background: #rgbify(@base) [];
+            --ig-primary-button: #rgbify(@accent) [];
+            --ig-primary-button-hover: 24,
+            119,
+            242;
+            --ig-primary-text: #rgbify(@text) [];
+            --ig-secondary-background: #rgbify(@mantle) [];
+            --ig-secondary-button: #rgbify(@text) [];
+            --ig-secondary-button-background: #rgbify(desaturate(darken(@accent, 20%), 20%)) [];
+            --ig-secondary-button-hover: #rgbify(desaturate(darken(@accent, 10%), 10%)) [];
+            --ig-tertiary-button-background: 255,
+            255,
+            255;
+            --ig-tertiary-button-border: 219,
+            219,
+            219;
+            --ig-tertiary-button-hover: 245,
+            245,
+            245;
+            --ig-tertiary-button-text: 38,
+            38,
+            38;
+            --ig-secondary-text: #rgbify(@subtext0) [];
+            --ig-separator: #rgbify(@surface0) [];
+            --ig-stroke: #rgbify(@surface0) [];
+            --ig-subscribers-only: 118,
+            56,
+            250;
+            --ig-success: 88,
+            195,
+            34;
+            --ig-temporary-highlight: 0,
+            149,
+            246;
+            --ig-tertiary-text: #rgbify(@subtext0) [];
+            --ig-text-on-color: #rgbify(@base) [];
+            --ig-text-on-media: 255,
+            255,
+            255;
+            --in-feed-story-item-height: 240px;
+            --in-feed-story-item-width: 135px;
+            --input-border-radius: 6px;
+            --large-layout-min: 1500px;
+            --live-video-border-radius: 4px;
+            --media-info: 335px;
+            --medium-layout-max: 1499px;
+            --medium-layout-min: 1080px;
+            --mobile-grid-item-margin: 2px;
+            --mobile-nav-height: 45px;
+            --modal-backdrop-dark: rgba(0, 0, 0, 0.85);
+            --modal-backdrop-default: rgba(0, 0, 0, 0.65);
+            --modal-border-radius: 12px;
+            --modal-padding: 16px;
+            --modal-z-index: 100;
+            --nav-narrow-width: 72px;
+            --nav-medium-width: 244px;
+            --nav-wide-width: 335px;
+            --orange-5: 253,
+            141,
+            50;
+            --photo: 600px;
+            --pink-5: 209,
+            8,
+            105;
+            --placeholder-text: @subtext0;
+            --post-separator: 38,
+            38,
+            38;
+            --purple-5: 163,
+            7,
+            186;
+            --red-4: 255,
+            104,
+            116;
+            --red-5: 237,
+            73,
+            86;
+            --red-6: 198,
+            35,
+            48;
+            --red-7: 167,
+            3,
+            17;
+            --refinement-section-height: 50px;
+            --revamp-nav-bottom-toolbar-height: 50px;
+            --revamp-feed-card-max-height: 835px;
+            --revamp-feed-card-min-height: 615px;
+            --revamp-feed-card-media-min-width: 390px;
+            --revamp-feed-card-dense-padding: 16px;
+            --revamp-feed-horizontal-padding-small-screen: 24px;
+            --revamp-feed-horizontal-padding-large-screen: 32px;
+            --revamp-feed-vertical-padding: 32px;
+            --right-rail-width: 352px;
+            --nav-wide-screen-min: 1920px;
+            --scrollable-content-header-height-med: 49px;
+            --scrollable-content-header-height: 44px;
+            --search-box-height: 40px;
+            --search-modal-height-expanded: 450px;
+            --search-modal-height: 362px;
+            --search-modal-top-offset: 12px;
+            --search-result-height: 50px;
+            --search-result-inline-top-offset: 60px;
+            --search-result-list-width: 375px;
+            --small-layout-max: 1079px;
+            --small-layout-min: 800px;
+            --story-gallery-preview-scale-correction: 2.5;
+            --story-progressbar-update-tick: 0.1s;
+            --story-swap-animation-duration: 350ms;
+            --system-10-font-size: 10px;
+            --system-10-line-height: 12px;
+            --system-11-font-size: 11px;
+            --system-11-line-height: 13px;
+            --system-12-font-size: 12px;
+            --system-12-line-height: 16px;
+            --system-14-font-size: 14px;
+            --system-14-line-height: 18px;
+            --system-16-font-size: 16px;
+            --system-16-line-height: 24px;
+            --system-18-font-size: 18px;
+            --system-18-line-height: 24px;
+            --system-20-line-height: 25px;
+            --system-22-font-size: 22px;
+            --system-22-line-height: 26px;
+            --system-24-font-size: 24px;
+            --system-24-line-height: 27px;
+            --system-26-font-size: 26px;
+            --system-26-line-height: 28px;
+            --system-28-font-size: 28px;
+            --system-28-line-height: 32px;
+            --system-32-font-size: 32px;
+            --system-32-line-height: 40px;
+            --tos-box-shadow: 255,
+            255,
+            255;
+            --web-always-black: 0,
+            0,
+            0;
+            --web-always-white: 255,
+            255,
+            255;
+            --web-overlay-on-media: 38,
+            38,
+            38;
+            --web-secondary-action: 224,
+            241,
+            255;
+            --yellow-5: 253,
+            203,
+            92;
+            color-scheme: dark;
+        }
+
+        /* BUTTONS */
+        [role="button"],
+        [type="button"],
+        [href="/accounts/edit/"],
+        [href="/archive/stories/"] {
+            color: @base;
+            --ig-primary-text: #rgbify(@base) [];
+        }
+
+        [dir="auto"] {
+            --ig-primary-text: #rgbify(@text) [];
+        }
+
+        [aria-label="Down chevron icon"],
+        [aria-label="Similar accounts"] {
+
+            svg,
+            & {
+                fill: @base !important;
+                color: @base !important;
+            }
+        }
+
+        [style^="background-color: rgb(55, 151, 240);"] {
+            background-color: @accent !important;
+
+            >div {
+                --always-white: @base;
+            }
+        }
+
+        [style^="background-color: rgb(78, 75, 245);"] {
+            background-color: darken(@accent, 10%) !important;
+
+            >[style^="cursor"] {
+                background-color: darken(@accent, 10%) !important;
+
+                +div {
+                    color: @accent !important;
+                    background-color: @base;
+                }
+            }
+
+            [aria-label="Play"] {
+                background-color: @base;
+
+                path {
+                    fill: @accent;
+                }
+            }
+        }
+
+        [aria-label="Play"] {
+            path {
+                fill: var(--always-black);
+            }
+        }
+
+        [style$="padding: 7px 12px;"]>div>div,
+        [data-scope="messages_table"] [style$="rgb(var(--ig-highlight-background));"] {
+            --primary-text: @text;
+            --ig-primary-text: #rgbify(@subtext0) [];
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        #catppuccin(@darkFlavor, @accentColor);
+    }
+
+    @media (prefers-color-scheme: light) {
+        #catppuccin(@lightFlavor, @accentColor);
+    }
+
+    #rgbify(@color) {
+        @rgb-raw: red(@color),
+        green(@color),
+        blue(@color);
+    }
+}
